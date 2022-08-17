@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <link rel="stylesheet" href="style/alertKeun-style.css">
+    <link rel="stylesheet" href="style/css-reset.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+</head>
+<body>
+
+    <h1 class="title-body">Alert</h1>
+
+    <!-- wraper -->
+    <div class="wraper">
+
+        <!-- alert with icon check -->
+        <div class="alert-wraper mt-10">
+            <div class="check-wraper">
+                <div class="check">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <div class="alert-desc-wraper">
+                <h1 class="alert-title">Successfully applied!</h1>
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. Lorem ipsum dolor sit, amet consectetur adipisicing elit. lorem</p>
+            </div>
+            <button class="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert with icon check END -->
+
+
+        <!-- alert with learn more -->
+        <div class="alert-wraper mt-10">
+            <div class="alert-desc-wraper">
+                <h1 class="alert-title">Successfully applied!</h1>
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. </p>
+                <a href="#" class="alert-learn">Learn more</a>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert with learn more END -->
+
+
+        <!-- alert with learn more & check icon -->
+        <div class="alert-wraper mt-10">
+            <div class="check-wraper">
+                <div class="check">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <div class="alert-desc-wraper">
+                <h1 class="alert-title">Successfully applied!</h1>
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. </p>
+                <a href="#" class="alert-learn">Learn more</a>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert with learn more & check icon END -->
+
+
+        <!-- alert without title & check icon -->
+        <div class="alert-wraper mt-10 mb-10 pe-015">
+            <div class="alert-desc-wraper grid-col-s1-e2">
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. </p>
+                <a href="#" class="alert-learn">Learn more</a>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert with learn more & check icon END -->
+
+
+        <!-- alert without title -->
+        <div class="alert-wraper mt-10 mb-10">
+            <div class="check-wraper mt-038">
+                <div class="check">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <div class="alert-desc-wraper">
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. </p>
+                <a href="#" class="alert-learn">Learn more</a>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert without titlle -->
+
+
+        <!-- alert without title & learn more -->
+        <div class="alert-wraper awp2 mt-10 mb-10">
+            <div class="check-wraper chw2">
+                <div class="check">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <div class="alert-desc-wraper">
+                <p class="alert-desc">Malesuada tellus tincidunt fringilla enim, id mauris. Id etiam nibh suscipit aliquam dolor. </p>
+            </div>
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-close"></i>
+            </button>
+        </div>
+        <!-- alert with learn more & check icon END -->
+
+
+    </div>
+    <!-- wraper END -->
+
+    <!-- 
+
+        let centerTop = ' top .4s;';
+let rightTop = 'rightTop .4s';
+
+function alertStandart(behave = {
+    Title : 'The action has been succed', 
+    Desc : 'This action will make you happy more than your day before',
+    withLink: false, 
+    position: centerTop}) { 
+  
+    const wraper = document.createElement("div");
+    const checkWraper = document.createElement("div")
+    const check = document.createElement("div")
+    const icon = document.createElement("i");
+    const alertDescWraper = document.createElement('div');
+    const alertTitle = document.createElement('h1');
+    const alertDesc = document.createElement('p');
+    const button = document.createElement('button');
+    const closeIcon = document.createElement('i');
+    const link = document.createElement('a');
+    
+    wraper.className = 'alert-wraper';
+    checkWraper.className = 'check-wraper';
+    check.className = 'check';
+    icon.className = 'fas fa-check';
+    closeIcon.className = 'fas fa-close';
+    alertDescWraper.className = 'alert-desc-wraper';
+    alertTitle.className = 'alert-title';
+    alertDesc.className = 'alert-desc';
+    button.className = 'close-btn';
+    button.style.cursor = 'pointer'; 
+    link.className = 'alert-learn';
+
+    if (behave.Title === undefined && behave.Desc === undefined) {
+        behave = {
+            Title : 'The action has been succed', 
+            Desc : 'This action will make you happy more than your day before', 
+            position: behave.position
+        }
+    } else if(behave.Title === undefined) {
+        behave = {
+            Title : '', 
+            Desc : behave.Desc, 
+            position: centerTop
+        }
+        alertDesc.style.cssText = "margin-top:-1px !important;";
+    } else if(behave.Desc === undefined) {
+        behave = {
+            Title : behave.Title, 
+            Desc : 'This action will make you happy more than your day before', 
+            position: centerTop
+        }
+    } else if(behave.withLink === false) {
+        const link = document.createElement('a');
+    }
+
+    button.addEventListener('click', function() {
+            wraper.style.cssText = 'top:-100px; left:0; right:0; opacity:0;';
+    });
+
+    wraper.appendChild(checkWraper);
+    wraper.appendChild(alertDescWraper);
+    wraper.appendChild(button);
+    button.appendChild(closeIcon);
+    checkWraper.appendChild(check);
+    check.appendChild(icon);
+    alertDescWraper.appendChild(alertTitle);
+    alertDescWraper.appendChild(alertDesc);
+    alertDescWraper.appendChild(link);
+
+    wraper.style.cssText = 'top:30px; left:0; right:0; opacity:1; animation: shake .3s .6s,'+behave.position;
+
+    alertTitle.innerHTML = behave.Title;
+    alertDesc.innerHTML = behave.Desc;
+    link.innerHTML = "learn more"
+    return document.body.appendChild(wraper);
+}
+
+alertStandart({
+    Desc : 'Data telah berhasil dihapus selama anda menyayangi dan mencitai nya',
+    position : centerTop
+});
+
+     -->
+    
+</body>
+</html>
